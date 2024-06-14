@@ -29,6 +29,9 @@
       <Box>
         <span>This reaction is endothermic.</span>
       </Box>
+      <Box>
+        <span>A, B, C are all gases at all temperatures.</span>
+      </Box>
     </div>
     <div class="flex-1 min-h-24">
       <Beaker
@@ -37,7 +40,7 @@
         class="w-full h-full md:py-10"
       />
     </div>
-    <div class="flex flex-wrap gap-x-3">
+    <div class="grid grid-cols-3 gap-x-3">
       <SimInput
         label="Concentration of A"
         name="concentrationA"
@@ -71,6 +74,14 @@
         :step="0.05"
       />
       <SimInput
+        label="Pressure"
+        name="pressure"
+        :min="0.1"
+        :max="1.9"
+        end=" atm"
+        :step="0.02"
+      />
+      <SimInput
         label="Mass of catalyst"
         name="catalyst"
         :min="0"
@@ -79,8 +90,6 @@
         :step="0.1"
       />
     </div>
-
-    {{ equilibrium.progress }}
     <Box class="flex justify-between">
       <span
         >Crafted by

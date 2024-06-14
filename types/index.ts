@@ -7,4 +7,5 @@ type EquilibriumState = {
   concentrationB: number;
   concentrationC: number;
   equilibriumConstant: number;
+  pressure: number;
 };

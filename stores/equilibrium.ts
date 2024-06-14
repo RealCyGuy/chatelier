@@ -10,6 +10,7 @@ export const useEquilibriumStore = defineStore("equilibriumStore", {
     concentrationB: 0.5,
     concentrationC: 0.5,
     equilibriumConstant: 0.5 / (0.5 * 0.5),
+    pressure: 1,
   }),
   getters: {
     get: (state) => {
@@ -27,9 +28,14 @@ export const useEquilibriumStore = defineStore("equilibriumStore", {
         ((state.temperature - state.tempMin) /
           (state.tempMax - state.tempMin)) *
         2;
+      let pressurePercent = ((state.pressure - 0.1) / 1.8) * 2;
 
       const logistic =
-        1 / (1 + Math.exp(-1 * (Q - state.equilibriumConstant * tempPercent)));
+        1 /
+        (1 +
+          Math.exp(
+            -1 * (Q - state.equilibriumConstant * tempPercent * pressurePercent)
+          ));
       return Math.abs(logistic - 1);
     },
     colors: (state) => {
