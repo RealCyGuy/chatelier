@@ -50,5 +50,19 @@ export const useEquilibriumStore = defineStore("equilibriumStore", {
 
       return [color.toString(), lighter.toString()];
     },
+    fireOpacity: (state) => {
+      return (state.temperature - 293.15) / (state.tempMax - 293.15);
+    },
+    stateInWords: (state) => {
+      let progress = state.progress;
+      progress = Math.round((progress + Number.EPSILON) * 10) / 10;
+      if (progress < 0.5) {
+        return "shifted to the left";
+      } else if (progress > 0.5) {
+        return "shifted to the right";
+      } else {
+        return "in equilibrium";
+      }
+    },
   },
 });

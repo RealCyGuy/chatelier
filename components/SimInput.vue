@@ -1,5 +1,5 @@
 <template>
-  <Box class="flex flex-1 flex-col min-w-72 gap-1">
+  <Box class="flex flex-1 flex-col gap-1">
     <div class="flex justify-between">
       <label :for="name">{{ label }}</label>
       <span>{{ equilibrium.get(props.name) }}{{ end }}</span>
