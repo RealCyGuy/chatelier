@@ -15,6 +15,7 @@
       <Box>
         <span>The reaction is {{ equilibrium.stateInWords }}.</span>
       </Box>
+
       <Box class="flex flex-col gap-2">
         <span>Equation:</span>
         <div class="flex gap-3 text-2xl sm:text-3xl">
@@ -109,6 +110,14 @@
         :step="0.1"
       />
     </div>
+    <Box class="text-base">
+      <span
+        >The pressure slider changes the total pressure by changing the volume
+        of the system, changing the partial pressures of the products and
+        reactants, affecting the equilbirium concentrations. (Not adding an
+        inert gas)</span
+      >
+    </Box>
     <Box class="flex justify-between flex-wrap">
       <span
         >Crafted by

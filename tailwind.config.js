@@ -4,12 +4,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: [
-          ["Absans", "sans-serif"],
-          {
-            fontFeatureSettings: "'case' on",
-          },
-        ],
+        sans: ["Absans", "sans-serif"],
       },
     },
   },
